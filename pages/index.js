@@ -1,16 +1,28 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import Header from "../components/Header"
 import Banner from "../components/Banner"
-
-export default function Home() {
+import AllProducts from "../components/AllProducts"
+export default function Home({ products }) {
   return (
     <>
-      <Head>Amazon_clone</Head>
+      <Head>
+        <title>Amazon_clone</title>
+      </Head>
       <Header />
-      <Banner/>
+      <main className="max-screen-2xl mx-auto">
+        <Banner />
+        <AllProducts products={products} />
+      </main>
     </>
   );
-  
+}
+ 
+export async function getServerSideProps(context) {
+  const products = await fetch("https://fakestoreapi.com/products")
+    .then((res) => res.json())
+  return {
+    props: {
+      products
+    }
+  }
 }

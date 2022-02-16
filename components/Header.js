@@ -30,32 +30,36 @@ export default function Header() {
           {/* first div */}
           <div className="m-1 link">
             <p className="text-sm">Hello Dhruv Rawat</p>
-            <p className="font-bold">Account and lists</p>
+            <p className="font-bold text-sm">Account and lists</p>
           </div>
           {/* second div */}
           <div className="m-1 link">
             <p className="text-sm">Returns</p>
-            <p className="font-bold">and orders</p>
+            <p className="font-bold text-sm">and orders</p>
           </div>
           {/* third div */}
           <div className="m-1 link flex">
             <ShoppingCartIcon className="h-7 cursor-pointer" />
             <sub className="text-yellow-500 font-bold">0</sub>
-            <span className="font-bold">Cart</span>
+            <span className="font-bold text-sm">Cart</span>
           </div>
         </div>
       </div>
       {/* Bottom nav */}
       <div className="flex items-center space-x-5 bg-amazon_blue-light text-white">
         <p className="flex item-center link">
-          <MenuIcon className="h-6 mr-1" />All</p>
+          <MenuIcon className="h-6 mr-1" />
+          All
+        </p>
         <p className="mt-2 mb-2 link">Amazon pay</p>
         <p className="mt-2 mb-2 link">Gifts Cards</p>
         <p className="mt-2 mb-2 link">Todays deals</p>
         <p className="hidden lg:inline-flex ml-5 link">Buy Again</p>
         <p className="hidden lg:inline-flex ml-5 link">Kindle eBooks</p>
         <p className="hidden lg:inline-flex ml-5 link">baby</p>
-        <p className="hidden lg:inline-flex ml-5 link">Grocery and Gourmet foods</p>
+        <p className="hidden lg:inline-flex ml-5 link">
+          Grocery and Gourmet foods
+        </p>
       </div>
     </>
   );
