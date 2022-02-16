@@ -35,7 +35,7 @@ export default function Header() {
           {/* second div */}
           <div className="m-1 link">
             <p className="text-sm">Returns</p>
-            <p className="font-bold">& orders</p>
+            <p className="font-bold">and orders</p>
           </div>
           {/* third div */}
           <div className="m-1 link flex">
@@ -51,11 +51,11 @@ export default function Header() {
           <MenuIcon className="h-6 mr-1" />All</p>
         <p className="mt-2 mb-2 link">Amazon pay</p>
         <p className="mt-2 mb-2 link">Gifts Cards</p>
-        <p className="mt-2 mb-2 link">Today's deals</p>
+        <p className="mt-2 mb-2 link">Todays deals</p>
         <p className="hidden lg:inline-flex ml-5 link">Buy Again</p>
         <p className="hidden lg:inline-flex ml-5 link">Kindle eBooks</p>
         <p className="hidden lg:inline-flex ml-5 link">baby</p>
-        <p className="hidden lg:inline-flex ml-5 link">Grocery & Gourmet foods</p>
+        <p className="hidden lg:inline-flex ml-5 link">Grocery and Gourmet foods</p>
       </div>
     </>
   );
