@@ -14,6 +14,7 @@ export default function Header() {
             height={40}
             objectFit="contain"
             className="cursor-pointer"
+            alt="#"
           />
         </div>
         {/* search */}
@@ -29,18 +30,18 @@ export default function Header() {
           {/* first div */}
           <div className="m-1 link">
             <p className="text-sm">Hello Dhruv Rawat</p>
-            <p class="font-bold">Account and lists</p>
+            <p className="font-bold">Account and lists</p>
           </div>
           {/* second div */}
           <div className="m-1 link">
             <p className="text-sm">Returns</p>
-            <p class="font-bold">& orders</p>
+            <p className="font-bold">& orders</p>
           </div>
           {/* third div */}
           <div className="m-1 link flex">
             <ShoppingCartIcon className="h-7 cursor-pointer" />
             <sub className="text-yellow-500 font-bold">0</sub>
-            <span class="font-bold">Cart</span>
+            <span className="font-bold">Cart</span>
           </div>
         </div>
       </div>
