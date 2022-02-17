@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import {SearchIcon, ShoppingCartIcon, MenuIcon} from "@heroicons/react/outline"
+import { SearchIcon, ShoppingCartIcon, MenuIcon } from "@heroicons/react/outline"
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function Header() {
+  const {data: session} = useSession();
   return (
     <>
       {/* upper nav */}
@@ -28,8 +30,10 @@ export default function Header() {
         {/* right part */}
         <div className="text-white flex items-center p-2 ml-2 mr-2">
           {/* first div */}
-          <div className="m-1 link">
-            <p className="text-sm">Hello Dhruv Rawat</p>
+          <div onClick= {signIn} className="m-1 link">
+            <p className="text-sm">
+              {session ? `Hello,${session.user.name}` : "SignIn"}
+            </p>
             <p className="font-bold text-sm">Account and lists</p>
           </div>
           {/* second div */}
@@ -42,8 +46,11 @@ export default function Header() {
             <ShoppingCartIcon className="h-7 cursor-pointer" />
             <sub className="text-yellow-500 font-bold">0</sub>
             <span className="font-bold text-sm">Cart</span>
+            {session ?<p onClick={signOut}>SignOut</p> :"" } 
+
           </div>
         </div>
+
       </div>
       {/* Bottom nav */}
       <div className="flex items-center space-x-5 bg-amazon_blue-light text-white">

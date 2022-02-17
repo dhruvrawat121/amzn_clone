@@ -26,7 +26,7 @@ export default function Item({
         width={200}
         height={300}
         loading="lazy"
-        objectFit="contain"
+        objectfit="contain"
         className="w-25 h-30"
       />
       <h4>{title}</h4>
