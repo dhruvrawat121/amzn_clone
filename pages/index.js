@@ -4,7 +4,7 @@ import Banner from "../components/Banner"
 import AllProducts from "../components/AllProducts"
 export default function Home({ products }) {
   return (
-    <>
+    <div className="bg-gray-200">
       <Head>
         <title>Amazon_clone</title>
       </Head>
@@ -13,7 +13,7 @@ export default function Home({ products }) {
         <Banner />
         <AllProducts products={products} />
       </main>
-    </>
+    </div>
   );
 }
  
