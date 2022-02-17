@@ -34,7 +34,7 @@ export default function Item({
         {Array(Rating)
           .fill()
           .map((_, i) => (
-            <StarIcon className="h-5 text-yellow-500" />
+            <StarIcon key={i} className="h-5 text-yellow-500" />
           ))}
       </div>
       <p className="text-xs my-2 clamp-2">{description}</p>
