@@ -1,15 +1,27 @@
 import React from "react";
 import Image from "next/image";
-import { SearchIcon, ShoppingCartIcon, MenuIcon } from "@heroicons/react/outline"
-import { useSession, signIn, signOut } from "next-auth/react"
+import {
+  SearchIcon,
+  ShoppingCartIcon,
+  MenuIcon,
+} from "@heroicons/react/outline";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux"
+import {selectItems} from "../redux/basket"
 
 export default function Header() {
-  const {data: session} = useSession();
+  const { data: session } = useSession();
+  const router = useRouter();
+  const items= useSelector(selectItems)
   return (
-    <>
+    <div className="sticky top-0 z-50">
       {/* upper nav */}
       <div className="flex items-center bg-amazon_blue pt-2 flex-grow">
-        <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
+        <div
+          onClick={() => router.push("/")}
+          className="mt-2 flex items-center flex-grow sm:flex-grow-0"
+        >
           <Image
             src="https://links.papareact.com/f90"
             width={140}
@@ -30,7 +42,7 @@ export default function Header() {
         {/* right part */}
         <div className="text-white flex items-center p-2 ml-2 mr-2">
           {/* first div */}
-          <div onClick= {signIn} className="m-1 link">
+          <div onClick={signIn} className="m-1 link">
             <p className="text-sm">
               {session ? `Hello,${session.user.name}` : "SignIn"}
             </p>
@@ -42,15 +54,13 @@ export default function Header() {
             <p className="font-bold text-sm">and orders</p>
           </div>
           {/* third div */}
-          <div className="m-1 link flex">
+          <div onClick={() => router.push("/checkout")} className="m-1 link flex">
             <ShoppingCartIcon className="h-7 cursor-pointer" />
-            <sub className="text-yellow-500 font-bold">0</sub>
+            <sub className="text-yellow-500 font-bold">{items.length}</sub>
             <span className="font-bold text-sm">Cart</span>
-            {session ?<p onClick={signOut}>SignOut</p> :"" } 
-
+            {session ? <p onClick={signOut}>SignOut</p> : ""}
           </div>
         </div>
-
       </div>
       {/* Bottom nav */}
       <div className="flex items-center space-x-5 bg-amazon_blue-light text-white">
@@ -68,6 +78,6 @@ export default function Header() {
           Grocery and Gourmet foods
         </p>
       </div>
-    </>
+    </div>
   );
 }

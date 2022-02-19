@@ -9,6 +9,7 @@ export default function AllProducts({ products }) {
         .map(({ id, description, image, rating, title, price, category }) => (
           <Item
             key={id}
+            id={id}
             title={title}
             description={description}
             image={image}
@@ -24,6 +25,7 @@ export default function AllProducts({ products }) {
           .map(({ id, description, image, rating, title, price, category }) => (
             <Item
               key={id}
+              id={id}
               title={title}
               description={description}
               image={image}
@@ -34,11 +36,12 @@ export default function AllProducts({ products }) {
           ))}
       </div>
       {products
-        .slice(5,products.length)
+        .slice(5, products.length)
         .map(({ id, description, image, rating, title, price, category }) => (
           <Item
             key={id}
             title={title}
+            id={id}
             description={description}
             image={image}
             price={price}
