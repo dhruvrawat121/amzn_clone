@@ -18,7 +18,7 @@ function CheckoutProducts({ id, title, image, price, description }) {
   }
   return (
     <div className="grid grid-cols-5">
-      <Image src={image} height={200} width={200} objectFit="contain" />
+      <img src={image} height={200} width={200} objectFit="contain" />
       <div className="col-span-3 mx-3">
         <p className="font-bold">{title}</p>
         <p>{price}GBP</p>
