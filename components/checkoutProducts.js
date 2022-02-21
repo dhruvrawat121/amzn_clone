@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/Image"
 import { addToBasket, removeFromBasket } from "../redux/basket";
 import {useDispatch} from "react-redux"
 

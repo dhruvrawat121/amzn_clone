@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../components/Header";
-import Image from "next/image";
 import {selectItems} from "../redux/basket"
 import { useSelector } from "react-redux";
 import CheckoutProducts from "../components/checkoutProducts"
@@ -15,7 +14,7 @@ export default function Checkout() {
       <main className="lg:flex max-w-screen-2xl mx-auto">
         {/* left side */}
         <div className="flex-grow shadow-sm m-5">
-          <Image
+          <img
             src="https://links.papareact.com/ikj"
             width={1080}
             height={250}

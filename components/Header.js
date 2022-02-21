@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import {
   SearchIcon,
   ShoppingCartIcon,
@@ -22,7 +21,7 @@ export default function Header() {
           onClick={() => router.push("/")}
           className="mt-2 flex items-center flex-grow sm:flex-grow-0"
         >
-          <Image
+          <img
             src="https://links.papareact.com/f90"
             width={140}
             height={40}
