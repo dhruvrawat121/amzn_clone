@@ -9,7 +9,6 @@ import CheckoutProducts from "../components/checkoutProducts"
 export default function Checkout() {
 
   const items = useSelector(selectItems)
-  console.log(items)
   return (
     <div className="bg-gray-100">
       <Header />
@@ -22,7 +21,7 @@ export default function Checkout() {
             height={250}
             objectFit="contain"
           />
-          <div className="flex flex-cols space-y-10 bg-white">
+          <div className="flex flex-col space-y-10 bg-white">
             <h1 className="text-3xl border-b pb-4">
               {items.length === 0
                 ? "your amazon basket empty"
@@ -33,6 +32,7 @@ export default function Checkout() {
                 title={item.title}
                 image={item.image}
                 price={item.price}
+                description={item.description}
               />
               
             ])}
