@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../components/Header";
-import {selectItems} from "../redux/basket"
+import { selectItems, selectTotal } from "../redux/basket";
 import { useSelector } from "react-redux";
-import CheckoutProducts from "../components/checkoutProducts"
-
-
+import CheckoutProducts from "../components/checkoutProducts";
+import { useSession, signIn, signOut } from "next-auth/react";
 export default function Checkout() {
-
-  const items = useSelector(selectItems)
+  const items = useSelector(selectItems);
+  const total = useSelector(selectTotal);
+  const { data: session } = useSession();
   return (
     <div className="bg-gray-100">
       <Header />
@@ -27,18 +27,32 @@ export default function Checkout() {
                 : "Shopping Basket"}
             </h1>
             {items.map((item, i) => [
-              <CheckoutProducts key={i} id={item.id}
+              <CheckoutProducts
+                key={i}
+                id={item.id}
                 title={item.title}
                 image={item.image}
                 price={item.price}
                 description={item.description}
-              />
-              
+              />,
             ])}
           </div>
         </div>
 
         {/* right side */}
+        <div>
+          {items.length > 0 && (
+            <>
+              <h2 className="whitespace-nowrap">
+                SubTotal {items.length} items :
+                <span className="font-bold p-2">{total} GBP</span>
+              </h2>
+              <button className="btn">
+                {!session ?"sign In to checkout" : "Proceed to Checkoout"}
+              </button>
+            </>
+          )}
+        </div>
       </main>
     </div>
   );
